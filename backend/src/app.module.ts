@@ -13,13 +13,7 @@ import { OffersModule } from './offers/offers.module';
 import { AuthModule } from './auth/auth.module';
 
 const entities = [User, Wish, Wishlist, Offer];
-const modules = [
-  WishesModule,
-  UsersModule,
-  WishlistsModule,
-  OffersModule,
-  AuthModule,
-];
+
 @Module({
   imports: [
     ConfigModule.forRoot({ load: [config] }),
@@ -33,7 +27,11 @@ const modules = [
       entities: entities,
       synchronize: config().database.synchronize,
     }),
-    modules,
+    WishesModule,
+    UsersModule,
+    WishlistsModule,
+    OffersModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
