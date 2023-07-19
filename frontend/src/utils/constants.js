@@ -1,4 +1,4 @@
-export const URL = "api.kraev.nomoredomains.xyz";
+export const URL = "https://api.kraev.nomoredomains.xyz";
 
 export const MINIMUM_PASSWORD_LENGTH = 3;
 export const MINIMUM_USERNAME_LENGTH = 3;
