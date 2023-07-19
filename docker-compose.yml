@@ -42,4 +42,4 @@ volumes:
     driver: local
 
 networks:
-  backend-database:
+  backend-database: {}
