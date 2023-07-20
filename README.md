@@ -1,3 +1,7 @@
 # Докеризация приложения
 
-Перед тем как приступить к выполнению проектной работы разместите в репозитории исходный код фронтенд и бэкенд частей сервиса КупиПодариДай, реализованного вами ранее. 
+IP адрес [58.160.79.190](158.160.79.190)
+
+Frontend  [https://kraev.nomoredomains.xyz](https://kraev.nomoredomains.xyz)
+
+Backend  [https://api.kraev.nomoredomains.xyz](https://api.kraev.nomoredomains.xyz)
