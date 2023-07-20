@@ -1,29 +1,26 @@
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { ConfigService } from '@nestjs/config';
+
 import { User } from '../users/entities/user.entity';
 import { UsersService } from '../users/users.service';
 import { HashProvider } from '../utils/hashProvider';
+
 
 @Injectable()
 export class AuthService {
   constructor(
     private jwtService: JwtService,
     private usersService: UsersService,
-    private readonly configService: ConfigService,
+
   ) {}
 
   auth(user: User) {
-    try {
-      const payload = { sub: user.id };
-      const secret =
-        this.configService.get<string>('JWT_KEY') || 'SOME_JWT_KEY';
-      return { access_token: this.jwtService.sign(payload, { secret }) };
-    } catch (error) {
-      throw new InternalServerErrorException(
-        'ошибка сервера при выполнении авторизации',
-      );
-    }
+    const payload = { sub: user.id };
+    return {
+      access_token: this.jwtService.sign(payload, {
+        expiresIn: '5d',
+      }),
+    };
   }
 
   async validatePassword(username: string, password: string) {

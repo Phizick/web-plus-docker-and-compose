@@ -10,7 +10,7 @@ services:
       - ./.env
     restart: always
     ports:
-      - '4000:3000'
+      - '3001:3001'
     networks:
       - backend-database
     depends_on:
